@@ -154,20 +154,21 @@ class JNUAssistant(object):
         pass
 
     def start(self):
-        print('项目地址:https://github.com/Jntmkk/JNUAssistent')
-        option = input('免责声明：用户在使用工具时造成对用户自己或他人任何形式的损失和伤害，由用户自己承担。（y/n)')
-        if option == 'n':
+        print('项目地址:https://github.com/Jntmkk/JNUAssistent      窗口右击有复制选项')
+        option = input('免责声明：用户在使用工具时造成对用户自己或他人任何形式的损失和伤害，由用户自己承担（y/n)。')
+        if option == 'y':
+            while (1):
+                self.require_user_message()
+                r = self.login()
+                if r == 1:
+                    break
+                if r == 0:
+                    continue
+                if r == 2:
+                    return
+            self.solve_q()
+        else:
             return
-        while (1):
-            self.require_user_message()
-            r = self.login()
-            if r == 1:
-                break
-            if r == 0:
-                continue
-            if r == 2:
-                return
-        self.solve_q()
 
     def end(self):
         try:
