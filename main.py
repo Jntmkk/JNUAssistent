@@ -154,6 +154,7 @@ class JNUAssistant(object):
         pass
 
     def start(self):
+        print('项目地址:https://github.com/Jntmkk/JNUAssistent')
         option = input('免责声明：用户在使用工具时造成对用户自己或他人任何形式的损失和伤害，由用户自己承担。（y/n)')
         if option == 'n':
             return
